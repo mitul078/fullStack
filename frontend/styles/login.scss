@@ -1,0 +1,62 @@
+.Login{
+    width: 100%;
+    height: fit-content;
+    margin-top: 60px;
+    
+    .container{
+        width: 100%;
+        height: 20rem;
+        h1{
+            text-align: center;
+            font-size: 3rem;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            input{
+                padding: 1rem;
+                font-size: 1.2rem;
+                border-bottom: 2px solid lightblue;
+                outline: none;
+                width: 50%;
+            }
+            button{
+                padding: 1rem 2rem;
+                font-size: 1.2rem;
+                border-radius: 1em;
+                cursor: pointer;
+                transition: scale .3s ease;
+                &:active{
+                    scale: .9;
+                }
+            }
+            p{
+                font-size: 1.3rem;
+                width: 50%;
+                text-align: end;
+            }
+            span{
+                color: cornflowerblue;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .Login{
+        .container{
+            padding: 1rem;
+            form{
+                input{
+                    width: 100%;
+                }
+                p{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

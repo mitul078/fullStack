@@ -1,0 +1,58 @@
+.Login {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 60px;
+}
+.Login .container {
+  width: 100%;
+  height: 20rem;
+}
+.Login .container h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+.Login .container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.Login .container form input {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 2px solid lightblue;
+  outline: none;
+  width: 50%;
+}
+.Login .container form button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 1em;
+  cursor: pointer;
+  transition: scale 0.3s ease;
+}
+.Login .container form button:active {
+  scale: 0.9;
+}
+.Login .container form p {
+  font-size: 1.3rem;
+  width: 50%;
+  text-align: end;
+}
+.Login .container form span {
+  color: cornflowerblue;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .Login .container {
+    padding: 1rem;
+  }
+  .Login .container form input {
+    width: 100%;
+  }
+  .Login .container form p {
+    width: 100%;
+  }
+}/*# sourceMappingURL=login.css.map */

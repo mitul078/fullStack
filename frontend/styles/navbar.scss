@@ -1,0 +1,48 @@
+
+nav {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button{
+
+        padding: .3rem .7rem;
+        font-size: 1.3rem;
+        border-radius: .5em;
+        cursor: pointer;
+    }
+
+    
+
+    .window-view {
+        display: flex;
+        font-size: 1.2rem;
+        gap: 1rem;
+        align-items: center;
+    }
+}
+.active{
+    color: tomato;
+    font-weight: 900;
+}
+.mobile-view {
+        display: none;
+    }
+@media (max-width:768px ) {
+    .mobile-view{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        gap: 2rem;
+        position: fixed;
+        bottom: 0;
+        z-index: 99;
+        background-color: seagreen;
+    }
+    nav{
+        display: none;
+    }
+}
