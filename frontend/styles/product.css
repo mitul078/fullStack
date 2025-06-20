@@ -92,6 +92,7 @@
     align-items: center;
     justify-content: center;
     padding-left: 0;
+    padding-bottom: 6rem;
   }
   .Product .products .product-container .box {
     width: 11rem;
