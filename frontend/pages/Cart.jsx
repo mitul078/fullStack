@@ -3,14 +3,23 @@ import '../styles/cart.css'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import axios from '../api/axiosConfig'
+import Loading from '../mainroutes/Loading'
 const Cart = () => {
     const [cart, setcart] = useState([])
+    const [load, setloading] = useState(true)
     const user = JSON.parse(localStorage.getItem("user"))
 
     useEffect(() => {
         const fetchCart = async () => {
-            const { data } = await axios.get(`/users/${user.id}`);
-            setcart(data.cart || []);
+            setloading(true);
+            try {
+                const { data } = await axios.get(`/users/${user.id}`);
+                setcart(data.cart || []);
+            } catch (error) {
+                console.error("Failed to fetch cart:", error);
+            } finally {
+                setloading(false);
+            }
         };
         fetchCart();
     }, []);
@@ -27,9 +36,11 @@ const Cart = () => {
     const discount = subtotal * 0.1;
     const platformFee = 50;
     const total = subtotal - discount + platformFee;
-    if (cart.length === 0) {
+    if(load) return <Loading/>
+    if (cart.length <= 0) {
         return <div className='text-4xl mt-2 capitalize text-center text-blue-400 w-full'>cart is empty</div>
     }
+
 
     return (
         <div className='Cart'>

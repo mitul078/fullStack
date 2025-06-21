@@ -9,7 +9,7 @@ const Profile = () => {
 
     const [showEdit, setShowEdit] = useState(false)
     const [data, setdata] = useState({
-        address: "",    
+        address: "",
         mobile: "",
         name: ""
     })
