@@ -83,7 +83,7 @@ const Cart = () => {
                 <hr />
                 <div className="box">
                     <h1>Total Amount</h1>
-                    <p>{total}</p>
+                    <p>${total}</p>
                 </div>
             </div>
         </div>
