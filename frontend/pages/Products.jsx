@@ -4,6 +4,7 @@ import axios from '../api/axiosConfig'
 import { useNavigate } from 'react-router-dom'
 import Loading from '../mainroutes/Loading'
 import InfiniteScroll from 'react-infinite-scroll-component';
+import {motion} from 'motion/react'
 const Products = () => {
     const [products, setProduct] = useState([])
 
@@ -87,8 +88,16 @@ const Products = () => {
                     <div className="product-container  ">
                         {
                             visibleProducts.map((product) => (
-                                <div key={product.id} className="box">
-                                    <img src={product.productImageURL?.[0]} alt={product.productName} />
+                                <motion.div key={product.id} 
+                                    transition={{
+                                        duration:.5
+                                    }}
+                                    whileHover={{
+                                        scale:.96
+                                    }}
+                                className="box">
+                                    <motion.img 
+                                    src={product.productImageURL?.[0]} alt={product.productName} />
                                     <h1>{product.productName}</h1>
                                     <h2>${product.productPrice}</h2>
                                     <h3>{getShortDescription(product.productDescription)}</h3>
@@ -106,7 +115,7 @@ const Products = () => {
                                             ? <i className="ri-heart-fill"></i>
                                             : <i className="ri-heart-3-line"></i>}
                                     </div>
-                                </div>
+                                </motion.div>
                             ))
                         }
                     </div>
